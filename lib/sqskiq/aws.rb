@@ -3,8 +3,8 @@ require 'aws-sdk'
 module Sqskiq
   module AWS
 
-    def init_queue(queue_name, configuration = {})
-      sqs = ::AWS::SQS.new(configuration)
+    def init_queue(queue_name, _configuration = {})
+      sqs = ::AWS::SQS.new
       @queue = sqs.queues.named(queue_name.to_s)
     end
 
